@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block main %}
+<div class="row">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+        </div>
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner rounded-2">
+            <div class="carousel-item active">
+                <img src="{% static 'assets/img/carousel01.png' %}" alt="Carouse01" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'assets/img/carousel02.png' %}" alt="Carouse02" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'assets/img/carousel03.png' %}" alt="Carouse03" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'assets/img/carousel04.png' %}" alt="Carouse04" class="d-block w-100">
+            </div>
+        </div>
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div><!-- End Carousel -->
+<!-- Who we are-->
+
+<div class="row">
+  <div class="col-12">
+    <div class="container-fluid mt-4 pt-2 text-center rounded-2" style="background-color:#F6C0C045;">
+      <h4 class="card-title">How We’re Making This Vision Reality</h4>
+    </div>
+    <div class="col-lg-12">
+      <div class="row">  
+        <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img class="card-img-top img-circle" src="{% static 'assets/img/we_build_skils.webp' %}" alt="We build Skills" style="width:50%">
+                <h6 class="card-title">We Build Skills</h6>
+                <p class="card-text">"Empowering you with practical knowledge to master AI, Data Science, and Robotics."</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img class="card-img-top img-circle text-center" src="{% static 'assets/img/we_open_doors.webp' %}" alt="We build Skills" style="width:50%">
+                <h6 class="card-title">We Open Doors</h6>
+                <p class="card-text">Unlocking new opportunities and career paths with cutting-edge education and training.</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img class="card-img-top img-circle" src="{% static 'assets/img/we_change_makers.png' %}" alt="We build Skills" style="width:50%">
+                <h6 class="card-title">We Create Changemakers</h6>
+                <p class="card-text text-left">Inspiring innovative thinkers who drive progress and shape the future of technology.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+      <div class="container-fluid mt-2 pt-2 text-center rounded-2" style="background-color: #F6C0C045;">
+        <h4 class="card-title">We customize course plans to suit your needs.</h4>
+      </div>
+      <div class="col-lg-12">
+        <div class="row">    
+          <!-- Bronze Card -->
+          <div class="col-xxl-4 col-md-6">
+                <div class="card info-card sales-card">
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                      </li>
+    
+                      <li><a class="dropdown-item" href="#">Enroll for more months</a></li>
+                    </ul>
+                  </div>
+    
+                  <div class="card-body">
+                    <h5 class="card-title">Bronze <span>| Subscription</span></h5>
+    
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i> <img src="{% static 'assets/img/Bronze.png' %}" alt="Bronze Subscription" width="60" height="60"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6><strike>499.00</strike>&nbsp;&nbsp;  <b>299.00</b></h6>                        
+                      </div>
+                    </div>
+                    <ul style="text-align:left;">
+                        <li>Designed for Beginner level</li>
+                        <li>90 Days E-Learning access</li>
+                        <li>Self paced online e-learning</li>
+                        <li>Interactive audio-video lessons</li>
+                        <li>Online Exam Simulator</li>
+                        <li>ebook and study materials</li>
+                        <li>24x7 Online access</li>                 
+                        </ul>
+                        <a href="{%url 'register' %}" class="btn btn-warning fancybox fancybox.ajax" >Enroll Now</a>
+                  </div>
+    
+                </div>
+          </div><!-- End Bronze Card -->
+          <!-- Silver Card -->
+          <div class="col-xxl-4 col-md-6">
+                <div class="card info-card sales-card">
+    
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                      </li>
+    
+                      <li><a class="dropdown-item" href="#">Enroll for more months</a></li>
+                    </ul>
+                  </div>
+    
+                  <div class="card-body">
+                    <h5 class="card-title">Silver <span>| Subscription</span></h5>
+    
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i> <img src="{% static 'assets/img/Silver.png' %}" alt="Silver Subscription" width="60" height="60"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6><strike>499.00</strike>&nbsp;&nbsp;  <b>299.00</b></h6>                        
+                      </div>
+                    </div>
+                    <ul style="text-align:left;">
+                        <li>Designed for Students</li>
+                        <li>180 Days E-Learning access</li>
+                        <li>Self paced online e-learning</li>
+                        <li>Interactive audio-video lessons</li>
+                        <li>Online Exam Simulator</li>
+                        <li>ebook and study materials</li>
+                        <li>24x7 Online access</li>                 
+                    </ul>
+                        <a href="{%url 'register' %}" class="btn btn-warning fancybox fancybox.ajax" >Enroll Now</a>
+                  </div>
+    
+                </div>
+          </div><!-- End Silver Card -->
+          <!-- Gold Card -->
+          <div class="col-xxl-4 col-md-6">
+                <div class="card info-card sales-card">
+    
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Enroll for more months</a></li>
+
+                    </ul>
+                  </div>
+    
+                  <div class="card-body">
+                    <h5 class="card-title">Gold <span>| Subscription</span></h5>
+    
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i> <img src="{% static 'assets/img/Gold.png' %}" alt="Gold Subscription" width="60" height="60"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6><strike>1499.00</strike>&nbsp;&nbsp;  <b>1299.00</b></h6>                        
+                      </div>
+                    </div>
+                    <ul style="text-align:left;">
+                        <li>Designed for Professionals</li>
+                        <li>360 Days E-Learning access</li>
+                        <li>Self paced online e-learning</li>
+                        <li>Interactive audio-video lessons</li>
+                        <li>Online Exam Simulator</li>
+                        <li>ebook and study materials</li>
+                        <li>24x7 Online access</li>                 
+                        </ul>
+                        <a href="{%url 'register' %}" class="btn btn-warning fancybox fancybox.ajax" >Enroll Now</a>
+                  </div>
+    
+                </div>
+          </div><!-- End Gold Card -->
+        </div>
+      </div><!-- End Left side columns -->
+    </div>
+</div>
+
+<div class="row">
+    <!-- Recent Courses information -->
+    <div class="col-12">
+      <div class="card recent-sales overflow-auto">
+
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">Recent Couses <span>| Today</span></h5>
+
+          <table class="table table-borderless datatable">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Subscription</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for course in courses %}
+              <tr>
+                <td><a href="#">{{ course.title }}</a></td>
+                <td><a href="#" class="text-primary">{{ course.description }}</a></td>
+                <td>{{ course.subscription }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+    </div><!-- End Recent Courses information -->
+</row>
+</div>
+{% endblock %}

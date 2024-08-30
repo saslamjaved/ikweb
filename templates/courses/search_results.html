@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block main %}
+    <!-- PAGE TITLE
+    ================================================== -->
+    <header class="py-4 py-md-2" style="background-image: none;">
+      <div class="container text-center py-xl-2">
+        <nav aria-label="breadcrumb">
+        </nav>
+      </div>
+      <!-- Img -->
+      <img class="d-none img-fluid" src="...html" alt="...">
+    </header>
+    <!-- BREADCRUMBS
+    ================================================== -->
+    <div class="container">
+      <nav class="mb-5 mb-md-8 mt-2" aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-scroll">
+          <li class="breadcrumb-item">
+            <a class="text-gray-800" href="#">
+              Home
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a class="text-gray-800" href="#">
+              Search
+            </a>
+          </li>       
+        </ol>
+      </nav>
+    </div>	
+    
+    <div class="row">
+    
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+
+        <div class="row">
+        
+        <!-- Reports -->
+        <div class="col-12">
+          <div class="card">
+      
+          <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+      
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Search details</h5>
+      
+            <!-- Line Chart -->
+            <div id="reportsChart"></div>
+            {% if courses %}
+            <h2>Search Results:</h2>
+            <ul>
+                {% for course in courses %}
+                    <li><a href="{% url 'course_details' course.slug %}">{{ course.title }}</a>: {{ course.description }}</li>
+                {% empty %}
+                    <li>No courses found.</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Enter a search term and press the "Search" button.</p>
+        {% endif %}
+            <!-- End Line Chart -->
+      
+          </div>
+      
+          </div>
+        </div><!-- End Reports -->
+        </div>
+      </div><!-- End Left side columns -->
+      
+      <!-- Right side columns -->
+      <div class="col-lg-4">
+           
+        <!-- News & Updates Traffic -->
+        <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+      
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+      
+        <div class="card-body pb-0">
+          <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
+      
+          <div class="news">
+          {%for product in products %}
+          <div class="post-item clearfix">
+            {% if product.image %}
+            <td>
+              <img src="{{ product.image.url }}" alt="" class="prod-size">
+            </td>
+            {% else %}
+            <td>
+              <img src="/static/assets/img/news-2.jpg" alt="">
+            </td>
+            {% endif %}
+              <h4><a href="#">{{ product.name }}</a></h4>
+              <p>{{ product.description }}</p>
+          </div>  
+          {% endfor %}
+          </div><!-- End sidebar recent posts-->
+      
+        </div>
+        </div><!-- End News & Updates -->
+      
+      </div><!-- End Right side columns -->
+      
+      </div>
+{% endblock %}

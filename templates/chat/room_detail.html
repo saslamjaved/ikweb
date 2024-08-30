@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block title %}Live chat{% endblock %}
+{% block main %}   
+
+
+       
+<section>
+    <div class="container py-5">
+  
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-4">
+  
+          <div class="card" id="chat1" style="border-radius: 15px;">
+            <div
+              class="card-header d-flex justify-content-between align-items-center p-3 bg-info text-white border-bottom-0"
+              style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+              <i class="fas fa-angle-left"></i>
+              <p class="mb-0 fw-bold">Live chat</p>
+              <i class="fas fa-times"></i>
+            </div>
+            <div class="card-body">
+                {% for message in messages %}
+              <div class="d-flex flex-row justify-content-start mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                  alt="avatar 1" style="width: 45px; height: 100%;">
+                  <strong>{{ message.user.username }}:
+                    {%if user.first_name == message.user.username %}
+                <div class="p-3 ms-3" style="border-radius: 15px; background-color:rgb(240, 175, 207) ;">
+                  <p class="small mb-0">{{ message.content }}</p>
+{% else %}
+<div class="p-3 ms-3" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+    <p class="small mb-0">{{ message.content }}</p>
+
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+
+              <form method="post">
+                {% csrf_token %}
+          
+              <div data-mdb-input-init class="form-outline">
+                <textarea class="form-control bg-body-tertiary" name="content" id="id_content" rows="4"></textarea>
+                <label class="form-label" for="textAreaExample">Type your message</label>
+              </div>
+              <button type="submit" class="btn btn-warning">Send</button>
+            </form>
+          
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+<!--###############################-->
+
+{% endblock %}

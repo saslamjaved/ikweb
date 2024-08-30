@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block main %}
+<h1>Chat with ChatGPT</h1>
+<div id="chat-box">
+    <!-- Messages will appear here -->
+</div>
+
+<form id="chat-form">
+    <input type="text" id="message" placeholder="Type your message" required>
+    <button type="submit">Send</button>
+</form>
+
+<script>
+    $(document).ready(function() {
+        $('#chat-form').on('submit', function(e) {
+            e.preventDefault();
+            
+            let message = $('#message').val();
+            
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'ask_chatgpt' %}",
+                data: {
+                    'message': message,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    $('#chat-box').append('<p><strong>You:</strong> ' + message + '</p>');
+                    $('#chat-box').append('<p><strong>ChatGPT:</strong> ' + response.message + '</p>');
+                    $('#message').val(''); // Clear the input field
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,355 @@
+{% extends 'base.html' %}
+{%block title%}Register{% endblock %}
+{% load static %}
+{% block main %}
+<div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-body pt-3">
+          <!-- Bordered Tabs -->
+          <ul class="nav nav-tabs nav-tabs-bordered">
+            <li class="nav-item">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#bronze">Bronze</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#silver">Silver</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gold">Gold</button>
+              </li>
+          </ul>
+          <div class="tab-content pt-2">
+            <div class="tab-pane fade show active profile-overview" id="bronze">
+              <div class="row">
+                <div class="col-lg-2 card-title text-center"><img src="{% static 'assets/img/Bronze.png' %}" alt="Profile" class="rounded-circle" alt="Bronze Subscription" width="60" height="60"></div>
+                <div class="col-lg-4"><h5 class="text-primary mt-4">Bronze <span>| Subscription</span></h5>
+                  <h5 class="text-success"><strike>499.00</strike>&nbsp;&nbsp;  <b>299.00</b></h5>
+                  <a class="btn btn-warning mb-2" href="{%url 'payments_init' %}">Buy Now</a>
+                  <!--<button type="button" class="btn btn-warning mb-2"></button>-->
+                </div>
+              </div>
+              <div class="row">
+                <!-- Subscription Info -->
+                <div class="card p-2">
+                  <div class="card-body">
+                    <h5 class="card-title">Subscription Details</h5>
+                    <div class="accordion accordion-flush" id="faq-group-1">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-1" type="button" data-bs-toggle="collapse">
+                            Designed for Beginner Level
+                          </button>
+                        </h2>
+                        <div id="faqsOne-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Perfect for newcomers, this subscription offers a gentle introduction to core concepts, ensuring a solid foundation in the subject.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-2" type="button" data-bs-toggle="collapse">
+                            90 Days E-Learning Access
+                          </button>
+                        </h2>
+                        <div id="faqsOne-2" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Enjoy uninterrupted access to our comprehensive e-learning platform for 90 days, allowing ample time to master the material at your own pace.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-3" type="button" data-bs-toggle="collapse">
+                            Self-Paced Online E-Learning
+                          </button>
+                        </h2>
+                        <div id="faqsOne-3" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Learn at your own speed with flexible scheduling, making it easy to fit education into your busy life.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-4" type="button" data-bs-toggle="collapse">
+                            Interactive Audio-Video Lessons
+                          </button>
+                        </h2>
+                        <div id="faqsOne-4" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Engage with high-quality, interactive audio and video lessons that make learning more dynamic and effective.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-5" type="button" data-bs-toggle="collapse">
+                            Online Exam Simulator
+                          </button>
+                        </h2>
+                        <div id="faqsOne-5" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Practice with our exam simulator to test your knowledge and prepare confidently for real-world assessments.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-6" type="button" data-bs-toggle="collapse">
+                            eBook and Study Materials
+                          </button>
+                        </h2>
+                        <div id="faqsOne-6" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Access a range of eBooks and study materials to reinforce your learning and provide additional resources for deeper understanding.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-7" type="button" data-bs-toggle="collapse">
+                            24x7 Online Access
+                          </button>
+                        </h2>
+                        <div id="faqsOne-7" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Learn anytime, anywhere with round-the-clock access to all course materials, ensuring you can study whenever it suits you.
+                          </div>
+                        </div>
+                      </div>                    
+                    </div>
+        
+                  </div>
+                </div>
+                <!-- End Subscription Info -->                           
+              </div>
+            </div>            
+            <div class="tab-pane fade profile-overview" id="silver">
+              <div class="row">
+                <div class="col-lg-2 card-title text-center"><img src="{% static 'assets/img/Silver.png' %}" alt="Profile" class="rounded-circle" alt="Bronze Subscription" width="60" height="60"></div>
+                <div class="col-lg-4"><h5 class="text-primary mt-4">Silver <span>| Subscription</span></h5>
+                  <h5 class="text-success"><strike>999.00</strike>&nbsp;&nbsp;  <b>699.00</b></h5>
+                  <button type="button" class="btn btn-warning mb-2">Buy Now</button>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Subscription Info -->
+                <div class="card p-2">
+                  <div class="card-body">
+                    <h5 class="card-title">Subscription Details</h5>
+                    <div class="accordion accordion-flush" id="faq-group-1">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-1" type="button" data-bs-toggle="collapse">
+                            Designed for Students
+                          </button>
+                        </h2>
+                        <div id="faqsOne-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Tailored specifically for students, this subscription supports academic goals with structured content and resources.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-2" type="button" data-bs-toggle="collapse">
+                            180 Days E-Learning Access
+                          </button>
+                        </h2>
+                        <div id="faqsOne-2" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Enjoy six months of full access to our comprehensive e-learning platform, providing ample time to thoroughly grasp the material.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-3" type="button" data-bs-toggle="collapse">
+                            Self-Paced Online E-Learning
+                          </button>
+                        </h2>
+                        <div id="faqsOne-3" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Study at your own pace with flexible learning schedules that fit around your personal and academic commitments.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-4" type="button" data-bs-toggle="collapse">
+                            Interactive Audio-Video Lessons
+                          </button>
+                        </h2>
+                        <div id="faqsOne-4" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Benefit from engaging audio and video lessons that enhance understanding and retention of key concepts.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-5" type="button" data-bs-toggle="collapse">
+                            Online Exam Simulator
+                          </button>
+                        </h2>
+                        <div id="faqsOne-5" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Prepare effectively with our exam simulator, designed to help you practice and assess your knowledge before actual tests.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-6" type="button" data-bs-toggle="collapse">
+                            eBook and Study Materials
+                          </button>
+                        </h2>
+                        <div id="faqsOne-6" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Gain access to detailed eBooks and study materials to support your learning and deepen your subject comprehension.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-7" type="button" data-bs-toggle="collapse">
+                            24x7 Online Access
+                          </button>
+                        </h2>
+                        <div id="faqsOne-7" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Learn anytime and from anywhere with continuous, round-the-clock access to all course resources and materials.
+                        </div>
+                      </div>                    
+                    </div>
+        
+                  </div>
+                </div>
+                <!-- End Subscription Info -->                           
+              </div>
+              </div>
+            </div>
+            <div class="tab-pane fade profile-overview" id="gold">
+              <div class="row">
+                <div class="col-lg-2 card-title text-center"><img src="{% static 'assets/img/Gold.png' %}" alt="Profile" class="rounded-circle" alt="Bronze Subscription" width="60" height="60"></div>
+                <div class="col-lg-4"><h5 class="text-primary mt-4">Gold <span>| Subscription</span></h5>
+                  <h5 class="text-success"><strike>1499.00</strike>&nbsp;&nbsp;  <b>1299.00</b></h5>
+                  <button type="button" class="btn btn-warning mb-2">Buy Now</button>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Subscription Info -->
+                <div class="card p-2">
+                  <div class="card-body">
+                    <h5 class="card-title">Subscription Details</h5>
+                    <div class="accordion accordion-flush" id="faq-group-1">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-1" type="button" data-bs-toggle="collapse">
+                            Designed for Professionals
+                          </button>
+                        </h2>
+                        <div id="faqsOne-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Ideal for working professionals, this subscription provides advanced, industry-relevant content to enhance your expertise and career growth.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-2" type="button" data-bs-toggle="collapse">
+                            360 Days E-Learning Access
+                          </button>
+                        </h2>
+                        <div id="faqsOne-2" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Benefit from a full year of access to our e-learning platform, offering extended time to master complex topics and fit learning into your busy schedule.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-3" type="button" data-bs-toggle="collapse">
+                            Self-Paced Online E-Learning
+                          </button>
+                        </h2>
+                        <div id="faqsOne-3" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Learn at your own pace with flexible, on-demand access, allowing you to balance professional and personal commitments effectively.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-4" type="button" data-bs-toggle="collapse">
+                            Interactive Audio-Video Lessons
+                          </button>
+                        </h2>
+                        <div id="faqsOne-4" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Engage with dynamic audio and video lessons that make learning interactive and effective, tailored for a professional audience.
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-5" type="button" data-bs-toggle="collapse">
+                            Online Exam Simulator
+                          </button>
+                        </h2>
+                        <div id="faqsOne-5" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Test your knowledge with our comprehensive exam simulator, designed to help you prepare thoroughly and confidently for certification exams.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-6" type="button" data-bs-toggle="collapse">
+                            eBook and Study Materials
+                          </button>
+                        </h2>
+                        <div id="faqsOne-6" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Access extensive eBooks and study materials to support in-depth learning and provide valuable references for professional application.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" data-bs-target="#faqsOne-7" type="button" data-bs-toggle="collapse">
+                            24x7 Online Access
+                          </button>
+                        </h2>
+                        <div id="faqsOne-7" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                          <div class="accordion-body">
+                            Enjoy uninterrupted, round-the-clock access to all course materials, ensuring you can study and review content whenever and wherever it suits you.
+                          </div>
+                        </div>
+                      </div>                    
+                    </div>
+        
+                  </div>
+                </div>
+                <!-- End Subscription Info -->                           
+              </div>
+            </div>
+          </div><!-- End Bordered Tabs -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

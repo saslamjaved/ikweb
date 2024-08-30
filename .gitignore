@@ -1,0 +1,2 @@
+.env
+.DJANGO_SECRET_KEY 

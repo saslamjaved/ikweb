@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block main %}
+<h2>Welcome to Chat Box</h2>   
+
+<div class="d-flex flex-row-reverse flex-wrap">
+  {% for room in rooms %}  
+  <a class="dropdown-item d-flex align-items-center" href="{% url 'room_detail' room.id %}">
+    <i> <img src="{% static 'assets/img/chatbot.gif' %}" href="#"></i>
+    <span>Need Help?</span>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

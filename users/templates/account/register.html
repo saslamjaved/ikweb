@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+      <div class="d-flex justify-content-center py-4">
+        <a href="{% url 'home' %}" class="logo d-flex align-items-center w-auto">
+          <strong><span class="d-none d-lg-block" style="color:tomato;">ikSaan.com</span></strong>
+        </a>
+      </div><!-- End Logo -->
+
+      <div class="card mb-3">
+
+        <div class="card-body">
+
+          <div class="pt-4 pb-2">
+            <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+            <p class="text-center small">Enter your personal details to create account</p>
+          </div>
+<!--$$$$$$$$$$$$$$$-->
+<form action="{% url 'register' %}" method="post">
+  {% csrf_token %}
+  <div class="col-12">
+    <label for="first_name" class="form-label">First Name</label>
+    <input type="text" name="first_name" class="form-control" id="first_name" required>
+    <div class="invalid-feedback">Please, enter your first name!</div>
+  </div>
+  <div class="col-12">
+    <label for="last_name" class="form-label">Last Name</label>
+    <input type="text" name="last_name" class="form-control" id="last_name" required>
+    <div class="invalid-feedback">Please, enter your first name!</div>
+  </div>
+  <div class="col-12">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" id="email" required>
+    <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+  </div>
+
+  <div class="col-12">
+    <label for="username" class="form-label">Username</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="text" name="username" class="form-control" id="username" required>
+      <div class="invalid-feedback">Please choose a username.</div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label for="password1" class="form-label">Password</label>
+    <input type="password" name="password1" class="form-control" id="password1" required>
+    <div class="invalid-feedback">Please enter your password!</div>
+  </div>
+
+  <div class="col-12">
+    <label for="password2" class="form-label">Confirmed Password</label>
+    <input type="password" name="password2" class="form-control" id="password2" required>
+    <div class="invalid-feedback">Please reenter your password!</div>
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+      <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="{% url 'tandc' %}">terms and conditions</a></label>
+      <div class="invalid-feedback">You must agree before submitting.</div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary w-100" type="submit">Create Account</button>
+  </div>
+  <div class="col-12">
+    <p class="small mb-0">Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+  </div>
+
+</form>
+
+{% if messages %}
+<div class="popup-wrapper">
+  <div class="popup">
+    <div class="popup-content">
+{% for message in messages %}
+<small {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}} </small>
+{% endfor %}
+</div>
+  </div>
+</div>
+{% endif %}
+<!--$$$$$$$$$$$$$$$-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

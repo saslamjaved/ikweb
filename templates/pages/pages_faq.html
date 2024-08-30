@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{%block title%}Register{% endblock %}
+{% load static %}
+{% block main %}
+<div class="pagetitle">
+    <h1>Frequently Asked Questions</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Frequently Asked Questions</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section faq">
+    <div class="row">
+      <div class="col-lg-6">
+
+        <div class="card basic">
+          <div class="card-body">
+            <h5 class="card-title">Basic Questions</h5>
+
+            <div>
+              <h6>1. What are the different subscription tiers available?</h6>
+              <p><ul>
+                <li>Gold Subscription: Provides access to all courses, including premium content, with additional features such as exclusive webinars and one-on-one mentor sessions.</li>
+                <li>Silver Subscription: Offers access to a wide range of courses with some premium content and additional features like community forums.</li>
+                <li>Bronze Subscription: Grants access to a basic selection of courses with standard content.</li>
+              </ul></p>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="col-lg-6">
+        <!-- F.A.Q Group 1 -->
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Subscription Related</h5>
+  
+              <div class="accordion accordion-flush" id="faq-group-1">
+  
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-1" type="button" data-bs-toggle="collapse">
+                      What are the different subscription tiers available?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Gold Subscription: Provides access to all courses, including premium content, with additional features such as exclusive webinars and one-on-one mentor sessions.</li>
+                        <li>Silver Subscription: Offers access to a wide range of courses with some premium content and additional features like community forums.</li>
+                        <li>Bronze Subscription: Grants access to a basic selection of courses with standard content.</li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-2" type="button" data-bs-toggle="collapse">
+                      How can I choose the right subscription tier for me?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-2" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                      Consider the following factors:
+                      <ul>
+                        <li>Content Access: If you want access to all available courses and premium content, the Gold subscription is ideal. For broader access with some additional features, the Silver subscription is a good choice. The Bronze subscription is suitable for those who are looking for basic content.</li>
+                        <li>Budget: Choose the tier that fits your budget while meeting your learning goals.</li>
+                        <li>Features: Review the additional features and benefits of each tier to decide which meets your needs.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-3" type="button" data-bs-toggle="collapse">
+                      How do I subscribe to a plan?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-3" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Sign Up: Create an account on our website or log in if you already have one.</li>
+                            <li>Choose a Plan: Navigate to the subscriptions section and select the desired plan (Gold, Silver, or Bronze).</li>
+                            <li>Payment: Complete the payment process using your preferred payment method.</li>
+                            <li>Confirmation: You will receive an email confirmation with details about your subscription and access instructions.</li>
+                        </ol>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-4" type="button" data-bs-toggle="collapse">
+                      Can I switch between subscription tiers?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-4" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                      Yes, you can contact our support team to upgrade or downgrade your subscription at any time.
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-5" type="button" data-bs-toggle="collapse">
+                      What is included in each subscription tier?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-5" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Gold Subscription: Unlimited access to all courses, exclusive content, special webinars, one-on-one mentorship, and other premium features.</li>
+                        <li>Silver Subscription: Access to most courses, community forums, and some exclusive content.</li>
+                        <li>Bronze Subscription: Access to a basic selection of courses with standard content.</li>
+                      </ul>
+                        
+  
+  
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-6" type="button" data-bs-toggle="collapse">
+                      How long is my subscription valid?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-6" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                      Subscriptions are available on a monthly or yearly basis. The duration of your subscription will depend on the plan you choose:
+                        <ul>
+                            <li>Monthly: Automatically renews every month unless canceled.</li>
+                            <li>Yearly: Automatically renews every year unless canceled.</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div><!-- End F.A.Q Group 1 -->
+        <!-- F.A.Q Group 2 -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Account Related</h5>
+
+            <div class="accordion accordion-flush" id="faq-group-2">
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" data-bs-target="#faqsTwo-1" type="button" data-bs-toggle="collapse">
+                    How do I reset my password?
+                  </button>
+                </h2>
+                <div id="faqsTwo-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-2">
+                  <div class="accordion-body">
+                    To reset your password:
+                    <ol>
+                        <li>Go to Login Page: Click on the “Forgot Password” link.</li>
+                        <li>Enter Email: Provide the email address associated with your account.</li>
+                        <li>Follow Instructions: Check your email for a password reset link and follow the instructions to set a new password.</li>
+                    </ol>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- End F.A.Q Group 2 -->
+
+
+
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

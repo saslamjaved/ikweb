@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block title %}home{% endblock %}
+{% block main %}
+
+    <!-- PAGE TITLE
+    ================================================== -->
+    <header class="py-4 py-md-2" style="background-image: none;">
+      <div class="container text-center py-xl-2">
+        <nav aria-label="breadcrumb">
+        </nav>
+      </div>
+      <!-- Img -->
+      <img class="d-none img-fluid" src="...html" alt="...">
+    </header>
+    <!-- BREADCRUMBS
+    ================================================== -->
+    <div class="container">
+      <nav class="mb-5 mb-md-8 mt-2" aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-scroll">
+          <li class="breadcrumb-item">
+            <a class="text-gray-800" href="{%url 'home' %}">
+              Home
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a class="text-gray-800" href="#">
+              {{chapter.course}}
+            </a>
+          </li>
+          <li class="breadcrumb-item text-gray-800 active" aria-current="page">
+            <a class="text-gray-800" href="#">
+              {{chapter.title}}
+            </a>
+          </li>          
+        </ol>
+      </nav>
+    </div>	
+    
+    <div class="row">
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
+        <!-- Main Screen -->
+        <div class="col-12">
+          <div class="card">
+      
+          <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+      
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+          </div>
+          <div class="ratio ratio-16x9">
+            <!-- <iframe src="https://youtu.be/ZNEiVqyPUAk" title="YouTube video" allowfullscreen></iframe> -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZNEiVqyPUAk?si=CHeshD3svabcgppl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <div class="row">
+                <div class="col-sm-8 p-3">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <td class="text-start"><b>Course Title : </b></td>
+                        <td>{{chapter.course}}</td>
+                      </tr>                      
+                      <tr>
+                        <td class="text-start"><b>Chapter : </b></td>
+                        <td>{{chapter.title}}</td>
+                      </tr>                      
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-sm-4 p-3">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <td class="text-start"><b>Duration: </b></td>
+                        <td>{{chapter.duration}} mins</td>
+                      </tr>                      
+                    </tbody>
+                  </table>
+                  <img class="rounded-pill img-thumbnail "  src="/media/{{course.thumbnail}}"  href="#" alt="">
+                </div>                
+            </div>
+            <div class="row p-3">
+              <div class="row">What you'll learn</div>
+              
+              <table class="table table-hover">
+                <tbody>              
+              {% if lessons %}
+              {% for lesson in lessons %}
+                    <tr>
+                      <td><i class="bi bi-arrow-right-circle-fill"></i></td>
+                      <td class="text-start">
+                        {{lesson.title}}
+                      </td>
+                      <td>{{lesson.content}}</td>
+                    </tr>                      
+              {% endfor %}
+              {% else %} 
+              <h4>no Lessons found</h4>            
+              {% endif %}
+            </tbody>
+              </table>                             
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div><!-- End Main Screen -->
+    </div><!-- End Left side columns -->
+      
+      <!-- Right side columns -->
+      <div class="col-lg-4">    
+        <!-- Course Content -->
+        <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Course content <span>| Today</span></h5>
+          <div class="activity">
+            {% if chapters %}
+            {% for chapter in chapters %}
+            <div class="activity-item d-flex">
+              <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+              <div class="activity-content">
+                <a class="fw-bold text-dark" href="{% url 'chapter_details' chapter.slug %}" >{{chapter.title}}</a>
+              </div>
+            </div><!-- End activity item-->                
+            {% endfor %}
+            {% else %} 
+            <h4>no Chapters found</h4>            
+            {% endif %}
+          </div>
+      </div>
+      </div><!-- End Course Content -->
+        
+        
+          <!-- Blogs -->
+          <div class="card">
+          <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+          </div>
+          <div class="card-body pb-0">
+            <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
+        
+            <div class="news">
+            {%for product in products %}
+            <div class="post-item clearfix">
+              {% if product.image %}
+              <td>
+                <img src="{{ product.image.url }}" alt="" class="prod-size">
+              </td>
+              {% else %}
+              <td>
+                <img src="/static/assets/img/news-2.jpg" alt="">
+              </td>
+              {% endif %}
+                <h4><a href="#">{{ product.name }}</a></h4>
+                <p>{{ product.description }}</p>
+            </div>  
+            {% endfor %}
+            </div><!-- End sidebar recent posts-->
+        
+          </div>
+          </div><!-- End Blogs -->
+        
+      </div><!-- End Right side columns -->
+    </div>
+{% endblock %}
